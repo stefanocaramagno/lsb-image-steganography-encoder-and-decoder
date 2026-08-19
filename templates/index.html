@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='author' content="Stefano Caramagno">
+
+    <title>Image Steganography and Steganalysis Web Tool</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Image Steganography and Steganalysis Web Tool</h1>
+    </header>
+
+    <main>
+        <div id="flex-container">
+            <div class="flex-item">
+                <h2 class="titolo-item">Steganography</h2>
+
+                <form action="/encode" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file" accept="image/*" required>
+                    <textarea name="text" placeholder="Enter the text to hide in the image" required></textarea>
+                    <button type="submit" class="pulsante-submit">Download the image with the Hidden Message</button>
+                </form>
+            </div>
+
+            <div class="flex-item">
+                <h2 class="titolo-item">Steganalysis</h2>
+
+                <form action="/decode" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file" accept="image/*" required>
+                    <button type="submit" class="pulsante-submit">View the Hidden Message of the image</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Steganography & Steganalysis App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
