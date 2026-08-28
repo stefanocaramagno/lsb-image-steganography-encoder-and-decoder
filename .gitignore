@@ -1,0 +1,10 @@
+# Python cache files.
+__pycache__/
+*.pyc
+
+temp/
+static/images/
+static/templates/
+!temp/.gitkeep
+!static/images/.gitkeep
+!static/templates/.gitkeep
